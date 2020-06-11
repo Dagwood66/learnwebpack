@@ -1,16 +1,16 @@
 'use strict';
-console.log("---dev-start------------------------------------------------------");
-console.log("---webpack.dev.conf.js------------------------------------------------------");
+// TODO 功能分析
+// TODO 流程分析
 const utils = require('./utils');
 const webpack = require('webpack');
 const config = require('../config');
-const merge = require('webpack-merge');
+const merge = require('webpack-merge'); // 合并对象
 const path = require('path');
 const baseWebpackConfig = require('./webpack.base.conf');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-const portfinder = require('portfinder');
+const portfinder = require('portfinder'); // 端口扫描(默认端口8000-65535)
 
 const HOST = process.env.HOST;
 const PORT = process.env.PORT && Number(process.env.PORT);
@@ -71,9 +71,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 });
 
 module.exports = new Promise((resolve, reject) => {
-    console.log("---module.exports-----------------------------------------------");
-    portfinder.basePort = process.env.PORT || config.dev.port;
+    portfinder.basePort = process.env.PORT || config.dev.port; // 默认开始端口
     portfinder.getPort((err, port) => {
+        // port 当前可用端口
         if (err) {
             reject(err)
         } else {
@@ -82,7 +82,7 @@ module.exports = new Promise((resolve, reject) => {
             // add port to devServer config
             devWebpackConfig.devServer.port = port;
 
-            // Add FriendlyErrorsPlugin
+            // Add FriendlyErrorsPlugin 错误提示插件
             devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
                 compilationSuccessInfo: {
                     messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],

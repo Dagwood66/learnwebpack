@@ -1,0 +1,31 @@
+{
+  "name": "Test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "node --inspect-brk node_modules/.bin/webpack --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ajv": "^6.10.2",
+    "css-loader": "^3.2.0",
+    "emojis-list": "^3.0.0",
+    "fast-deep-equal": "^2.0.1",
+    "fast-json-stable-stringify": "^2.0.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "json-schema-traverse": "^0.4.1",
+    "json5": "^2.1.0",
+    "raw-loader": "^3.1.0",
+    "style-loader": "^1.0.0",
+    "uri-js": "^4.2.2",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-merge": "^4.2.2"
+  }
+}
